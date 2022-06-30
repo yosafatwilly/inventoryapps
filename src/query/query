@@ -1,0 +1,8 @@
+--  Query Report Barang
+SELECT b.nama as 'Nama Barang', b.stok as 'Stok' , b.deskripsi as 'Deskripsi Barang', k.name as 'Kategori', s.name as 'Satuan' , b.last_updated as 'Last Updated'
+FROM Barang b
+    INNER JOIN Kategori k ON k.id_kategori = b.id_kategori
+    INNER JOIN Satuan s ON s.id_satuan  = b.id_satuan 
+ORDER BY b.id_barang
+
+--  Query Report Transaksi
