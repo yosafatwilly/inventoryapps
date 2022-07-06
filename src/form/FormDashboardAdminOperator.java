@@ -200,24 +200,24 @@ public class FormDashboardAdminOperator extends javax.swing.JPanel {
 
         jLayeredPane1.setLayout(new java.awt.GridLayout(1, 0, 10, 0));
 
-        card1.setColor1(new java.awt.Color(254, 209, 199));
-        card1.setColor2(new java.awt.Color(254, 141, 198));
+        card1.setColor1(new java.awt.Color(28, 181, 224));
+        card1.setColor2(new java.awt.Color(0, 0, 70));
         jLayeredPane1.add(card1);
 
-        card2.setColor1(new java.awt.Color(113, 0, 255));
-        card2.setColor2(new java.awt.Color(225, 0, 255));
+        card2.setColor1(new java.awt.Color(28, 181, 224));
+        card2.setColor2(new java.awt.Color(0, 0, 70));
         jLayeredPane1.add(card2);
 
-        card3.setColor1(new java.awt.Color(255, 0, 118));
-        card3.setColor2(new java.awt.Color(89, 15, 183));
+        card3.setColor1(new java.awt.Color(28, 181, 224));
+        card3.setColor2(new java.awt.Color(0, 0, 70));
         jLayeredPane1.add(card3);
 
-        card4.setColor1(new java.awt.Color(223, 152, 250));
-        card4.setColor2(new java.awt.Color(144, 85, 255));
+        card4.setColor1(new java.awt.Color(28, 181, 224));
+        card4.setColor2(new java.awt.Color(0, 0, 70));
         jLayeredPane1.add(card4);
 
-        card5.setColor1(new java.awt.Color(144, 85, 255));
-        card5.setColor2(new java.awt.Color(237, 123, 132));
+        card5.setColor1(new java.awt.Color(28, 181, 224));
+        card5.setColor2(new java.awt.Color(0, 0, 70));
         jLayeredPane1.add(card5);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
