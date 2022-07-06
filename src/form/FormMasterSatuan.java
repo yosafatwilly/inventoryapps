@@ -3,6 +3,8 @@ package form;
 import datasatuan.*;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import swing.ScrollBarCustom;
@@ -219,11 +221,11 @@ public class FormMasterSatuan extends javax.swing.JPanel {
     private void bsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsimpanActionPerformed
         if (txtnamasatuan.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Masukkan nama kategori.");
-        }else {
+        } else {
             if (bsimpan.getText().equalsIgnoreCase("SIMPAN")) {
-                SatuanController.insert(new Satuan(txtnamasatuan.getText(), txtdeskripsi.getText()));
+                SatuanController.insert(new Satuan(txtnamasatuan.getText(), txtdeskripsi.getText(), new Timestamp(new Date().getTime())));
             } else {
-                SatuanController.update(new Satuan(idSatuan, txtnamasatuan.getText(), txtdeskripsi.getText()));
+                SatuanController.update(new Satuan(idSatuan, txtnamasatuan.getText(), txtdeskripsi.getText(), new Timestamp(new Date().getTime())));
             }
             kosong();
             datatable();

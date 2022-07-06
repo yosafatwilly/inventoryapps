@@ -1,6 +1,7 @@
 package form;
 
 import datauser.TabelModelUser;
+import datauser.TabelModelUserOperator;
 import datauser.User;
 import datauser.UserController;
 import java.awt.Color;
@@ -136,7 +137,7 @@ public class FormListUser extends javax.swing.JPanel {
 
     private void datatable() {
         List<User> list = UserController.getAll(txtcari.getText());
-        TabelModelUser model = new TabelModelUser(list);
+        TabelModelUserOperator model = new TabelModelUserOperator(list);
         tabel.setModel(model);
     }
 }

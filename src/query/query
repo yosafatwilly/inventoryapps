@@ -6,3 +6,9 @@ FROM Barang b
 ORDER BY b.id_barang
 
 --  Query Report Transaksi
+SELECT t.id_transaksi AS 'ID TRANSAKSI', u.id_user AS 'NIS/NIP PEMINJAM', u.name AS 'NAMA PEMINJAM',t.tanggal_request as 'TANGGAL REQUEST', t.status 'STATUS PEMINJAMAN', b.nama as 'BARANG', d.jumlah_dipinjam AS 'JUMLAH BARANG', d.keterangan as 'KETERANGAN'
+FROM transaksi t
+    INNER JOIN user u ON t.id_userpeminjam = u.id_user
+    INNER JOIN detailtransaksi d ON d.id_transaksi = t.id_transaksi
+    INNER JOIN barang b ON b.id_barang = d.id_barang
+ORDER BY t.last_updated ASC

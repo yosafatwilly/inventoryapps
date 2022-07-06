@@ -304,36 +304,51 @@
           <SubComponents>
             <Component class="component.Card" name="card1">
               <Properties>
+                <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="c7" green="d1" red="fe" type="rgb"/>
+                </Property>
                 <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="b4" green="b4" red="b4" type="rgb"/>
+                  <Color blue="c6" green="8d" red="fe" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="component.Card" name="card2">
               <Properties>
+                <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="0" red="71" type="rgb"/>
+                </Property>
                 <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="b4" green="b4" red="b4" type="rgb"/>
+                  <Color blue="ff" green="0" red="e1" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="component.Card" name="card3">
               <Properties>
+                <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="76" green="0" red="ff" type="rgb"/>
+                </Property>
                 <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="b4" green="b4" red="b4" type="rgb"/>
+                  <Color blue="b7" green="f" red="59" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="component.Card" name="card4">
               <Properties>
+                <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="fa" green="98" red="df" type="rgb"/>
+                </Property>
                 <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="b4" green="b4" red="b4" type="rgb"/>
+                  <Color blue="ff" green="55" red="90" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="component.Card" name="card5">
               <Properties>
+                <Property name="color1" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="55" red="90" type="rgb"/>
+                </Property>
                 <Property name="color2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="b4" green="b4" red="b4" type="rgb"/>
+                  <Color blue="84" green="7b" red="ed" type="rgb"/>
                 </Property>
               </Properties>
             </Component>

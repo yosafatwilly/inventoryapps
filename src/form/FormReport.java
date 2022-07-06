@@ -143,7 +143,8 @@ public class FormReport extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            String path = "./src/report/ReportUser.jasper";
+//            String path = "./src/report/ReportUser.jasper";
+            String path = "./src/reportv2/ReportUser.jasper";
             HashMap parameter = new HashMap();
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
@@ -154,7 +155,8 @@ public class FormReport extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
-            String path = "./src/report/ReportKategori.jasper";
+//            String path = "./src/report/ReportKategori.jasper";
+            String path = "./src/reportv2/ReportKategori.jasper";
             HashMap parameter = new HashMap();
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
@@ -165,7 +167,8 @@ public class FormReport extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         try {
-            String path = "./src/report/ReportSatuan.jasper";
+//            String path = "./src/report/ReportSatuan.jasper";
+            String path = "./src/reportv2/ReportSatuan.jasper";
             HashMap parameter = new HashMap();
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
@@ -176,7 +179,8 @@ public class FormReport extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            String path = "./src/report/ReportBarang.jasper";
+//            String path = "./src/report/ReportBarang.jasper";
+            String path = "./src/reportv2/ReportBarang.jasper";
             HashMap parameter = new HashMap();
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
@@ -187,7 +191,8 @@ public class FormReport extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         try {
-            String path = "./src/report/ReportTransaksi.jasper";
+//            String path = "./src/report/ReportTransaksi.jasper";
+            String path = "./src/reportv2/ReportTransaksi.jasper";
             HashMap parameter = new HashMap();
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);

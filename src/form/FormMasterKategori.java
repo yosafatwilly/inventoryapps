@@ -5,6 +5,8 @@ import datakategori.KategoriController;
 import datakategori.TabelModelKategori;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import swing.ScrollBarCustom;
@@ -228,9 +230,9 @@ public class FormMasterKategori extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Masukkan nama kategori.");
         } else {
             if (bsimpan.getText().equalsIgnoreCase("SIMPAN")) {
-                KategoriController.insert(new Kategori(txtnamakategori.getText(), txtdeskripsi.getText()));
+                KategoriController.insert(new Kategori(txtnamakategori.getText(), txtdeskripsi.getText(), new Timestamp(new Date().getTime())));
             } else {
-                KategoriController.update(new Kategori(idKategori, txtnamakategori.getText(), txtdeskripsi.getText()));
+                KategoriController.update(new Kategori(idKategori, txtnamakategori.getText(), txtdeskripsi.getText(), new Timestamp(new Date().getTime())));
             }
             kosong();
             datatable();

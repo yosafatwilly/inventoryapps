@@ -18,7 +18,8 @@ public class Transaksi {
     private List<DetailTransaksi> detailTransaksis = new ArrayList<>();
 
     public static enum Status {
-        REQUESTED, APPROVED, REJECTED, INPROGRESS, CANCELED, CLOSE
+//        REQUESTED, APPROVED, REJECTED, INPROGRESS, CANCELED, CLOSE
+        DISETUJUI, DIAMBIL, DIKEMBALIKAN, DIBATALKAN, REQUEST
     }
 
     public Transaksi() {
@@ -28,7 +29,6 @@ public class Transaksi {
         this.idTransaksi = idTransaksi;
     }
 
-    
     public Transaksi(User userPeminjam, Status status, Timestamp tanggalRequest, Timestamp lastUpdated) {
         this.userPeminjam = userPeminjam;
         this.status = status;
@@ -96,6 +96,5 @@ public class Transaksi {
     public String toString() {
         return "Transaksi{" + "idTransaksi=" + idTransaksi + ", userPeminjam=" + userPeminjam + ", userOperator=" + userOperator + ", status=" + status + ", tanggalRequest=" + tanggalRequest + ", lastUpdated=" + lastUpdated + ", detailTransaksis=" + detailTransaksis + '}';
     }
-
 
 }

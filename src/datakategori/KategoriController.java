@@ -23,6 +23,7 @@ public class KategoriController {
                 kategori.setIdKategori(rs.getString(1));
                 kategori.setName(rs.getString(2));
                 kategori.setDescription(rs.getString(3));
+                kategori.setLastUpdated(rs.getTimestamp(4));
             }
         } catch (SQLException ex) {
             Logger.getLogger(KategoriController.class.getName()).log(Level.SEVERE, null, ex);
@@ -32,11 +33,12 @@ public class KategoriController {
 
     public static void insert(Kategori kat) {
         try {
-            String sql = "INSERT INTO KATEGORI(id_kategori, name,description) VALUES(?,?,?)";
+            String sql = "INSERT INTO KATEGORI(id_kategori, name,description,last_updated) VALUES(?,?,?,?)";
             PreparedStatement st = DatabaseConnection.getInstance().getConnection().prepareStatement(sql);
             st.setString(1, kat.getIdKategori());
             st.setString(2, kat.getName());
             st.setString(3, kat.getDescription());
+            st.setTimestamp(4, kat.getLastUpdated());
             st.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil disimpan.");
         } catch (SQLException ex) {
@@ -58,11 +60,12 @@ public class KategoriController {
 
     public static void update(Kategori kat) {
         try {
-            String sql = "UPDATE KATEGORI SET name =?,description=? where id_kategori =?";
+            String sql = "UPDATE KATEGORI SET name =?,description=?,last_updated=? where id_kategori =?";
             PreparedStatement st = DatabaseConnection.getInstance().getConnection().prepareStatement(sql);
             st.setString(1, kat.getName());
             st.setString(2, kat.getDescription());
-            st.setString(3, kat.getIdKategori());
+            st.setTimestamp(3, kat.getLastUpdated());
+            st.setString(4, kat.getIdKategori());
             st.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil Update");
         } catch (SQLException ex) {
@@ -86,6 +89,7 @@ public class KategoriController {
                 kate.setIdKategori(rs.getString(1));
                 kate.setName(rs.getString(2));
                 kate.setDescription(rs.getString(3));
+                kate.setLastUpdated(rs.getTimestamp(4));
                 list.add(kate);
             }
         } catch (SQLException ex) {

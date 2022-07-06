@@ -504,7 +504,7 @@ public class FormRequestPeminjaman extends javax.swing.JPanel {
         } else {
             Transaksi transaksi = new Transaksi(
                     user, 
-                    Transaksi.Status.REQUESTED, 
+                    Transaksi.Status.REQUEST, 
                     new Timestamp(new Date().getTime()), 
                     new Timestamp(new Date().getTime()));
             String idTransaksi = TransaksiController.insert(transaksi);

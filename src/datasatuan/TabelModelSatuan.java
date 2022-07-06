@@ -19,7 +19,7 @@ public class TabelModelSatuan extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 3; //menentukan jumlah koloms
+        return 4; //menentukan jumlah koloms
     }
 
     @Override
@@ -32,6 +32,8 @@ public class TabelModelSatuan extends AbstractTableModel {
                 return k.getName();
             case 2:
                 return k.getDescription();
+            case 3:
+                return k.getLastUpdated();
             default:
                 return "";
         }
@@ -46,6 +48,8 @@ public class TabelModelSatuan extends AbstractTableModel {
                 return "Nama Satuan";
             case 2:
                 return "Description";
+            case 3:
+                return "Last Updated";
             default:
                 return "";
         }

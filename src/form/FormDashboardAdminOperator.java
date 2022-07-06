@@ -38,12 +38,11 @@ public class FormDashboardAdminOperator extends javax.swing.JPanel {
         jScrollPane2.setVerticalScrollBar(new ScrollBarCustom());
         
         //Set Menu pada dropdown status
-        cbstatus.addItem(Transaksi.Status.APPROVED.name());
-        cbstatus.addItem(Transaksi.Status.CANCELED.name());
-        cbstatus.addItem(Transaksi.Status.CLOSE.name());
-        cbstatus.addItem(Transaksi.Status.INPROGRESS.name());
-        cbstatus.addItem(Transaksi.Status.REJECTED.name());
-        cbstatus.addItem(Transaksi.Status.REQUESTED.name());
+        cbstatus.addItem(Transaksi.Status.DISETUJUI.name());
+        cbstatus.addItem(Transaksi.Status.DIAMBIL.name());
+        cbstatus.addItem(Transaksi.Status.DIKEMBALIKAN.name());
+        cbstatus.addItem(Transaksi.Status.DIBATALKAN.name());
+        cbstatus.addItem(Transaksi.Status.REQUEST.name());
         
         //Set Data Pada Card Item
         card1.setData(new Model_Card(new ImageIcon(getClass().getResource("/icon/2.png")), "Total Barang", BarangController.getCount(), ""));
@@ -201,19 +200,24 @@ public class FormDashboardAdminOperator extends javax.swing.JPanel {
 
         jLayeredPane1.setLayout(new java.awt.GridLayout(1, 0, 10, 0));
 
-        card1.setColor2(new java.awt.Color(180, 180, 180));
+        card1.setColor1(new java.awt.Color(254, 209, 199));
+        card1.setColor2(new java.awt.Color(254, 141, 198));
         jLayeredPane1.add(card1);
 
-        card2.setColor2(new java.awt.Color(180, 180, 180));
+        card2.setColor1(new java.awt.Color(113, 0, 255));
+        card2.setColor2(new java.awt.Color(225, 0, 255));
         jLayeredPane1.add(card2);
 
-        card3.setColor2(new java.awt.Color(180, 180, 180));
+        card3.setColor1(new java.awt.Color(255, 0, 118));
+        card3.setColor2(new java.awt.Color(89, 15, 183));
         jLayeredPane1.add(card3);
 
-        card4.setColor2(new java.awt.Color(180, 180, 180));
+        card4.setColor1(new java.awt.Color(223, 152, 250));
+        card4.setColor2(new java.awt.Color(144, 85, 255));
         jLayeredPane1.add(card4);
 
-        card5.setColor2(new java.awt.Color(180, 180, 180));
+        card5.setColor1(new java.awt.Color(144, 85, 255));
+        card5.setColor2(new java.awt.Color(237, 123, 132));
         jLayeredPane1.add(card5);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

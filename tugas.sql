@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 28, 2022 at 01:33 PM
+-- Generation Time: Jul 06, 2022 at 02:15 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -60,7 +60,8 @@ CREATE TABLE `detailtransaksi` (
 CREATE TABLE `kategori` (
   `id_kategori` int(20) NOT NULL,
   `name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL
+  `description` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_updated` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -72,7 +73,8 @@ CREATE TABLE `kategori` (
 CREATE TABLE `satuan` (
   `id_satuan` int(20) NOT NULL,
   `name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(600) COLLATE utf8mb4_unicode_ci NOT NULL
+  `description` varchar(600) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_updated` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

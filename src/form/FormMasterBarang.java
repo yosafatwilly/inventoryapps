@@ -251,11 +251,6 @@ public class FormMasterBarang extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblbarang);
 
-        txtcari.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcariActionPerformed(evt);
-            }
-        });
         txtcari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtcariKeyPressed(evt);
@@ -399,10 +394,6 @@ public class FormMasterBarang extends javax.swing.JPanel {
         kosong();
         datatable();
     }//GEN-LAST:event_bcancelActionPerformed
-
-    private void txtcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcariActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcariActionPerformed
 
     private void tblbarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblbarangMouseClicked
         int row = tblbarang.getSelectedRow();

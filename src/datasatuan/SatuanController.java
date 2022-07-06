@@ -23,6 +23,7 @@ public class SatuanController {
                 satuan.setIdSatuan(rs.getString(1));
                 satuan.setName(rs.getString(2));
                 satuan.setDescription(rs.getString(3));
+                satuan.setLastUpdated(rs.getTimestamp(4));
             }
         } catch (SQLException ex) {
             Logger.getLogger(SatuanController.class.getName()).log(Level.SEVERE, null, ex);
@@ -32,11 +33,12 @@ public class SatuanController {
     
     public static void insert(Satuan sat) {
         try {
-            String sql = "INSERT INTO SATUAN(id_satuan, name,description) VALUES(?,?,?)";
+            String sql = "INSERT INTO SATUAN(id_satuan, name,description,last_updated) VALUES(?,?,?,?)";
             PreparedStatement st = DatabaseConnection.getInstance().getConnection().prepareStatement(sql);
             st.setString(1, sat.getIdSatuan());
             st.setString(2, sat.getName());
             st.setString(3, sat.getDescription());
+            st.setTimestamp(4, sat.getLastUpdated());
             st.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil disimpan.");
         } catch (SQLException ex) {
@@ -58,11 +60,12 @@ public class SatuanController {
 
     public static void update(Satuan sat) {
         try {
-            String sql = "UPDATE SATUAN SET name =?,description=? where id_satuan =?";
+            String sql = "UPDATE SATUAN SET name =?,description=?, last_updated=? where id_satuan =?";
             PreparedStatement st = DatabaseConnection.getInstance().getConnection().prepareStatement(sql);
             st.setString(1, sat.getName());
             st.setString(2, sat.getDescription());
-            st.setString(3, sat.getIdSatuan());
+            st.setTimestamp(3, sat.getLastUpdated());
+            st.setString(4, sat.getIdSatuan());
             st.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil Update");
         } catch (SQLException ex) {
@@ -86,6 +89,7 @@ public class SatuanController {
                 sat.setIdSatuan(rs.getString(1));
                 sat.setName(rs.getString(2));
                 sat.setDescription(rs.getString(3));
+                sat.setLastUpdated(rs.getTimestamp(4));
                 list.add(sat);
             }
         } catch (SQLException ex) {
