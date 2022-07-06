@@ -39,13 +39,17 @@ ORDER BY t.last_updated ASC]]>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="802" height="66" backcolor="#000000" uuid="57776c6e-9a25-4edf-8c1b-4c42b829bd52"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="802" height="66" uuid="deb8eda1-5ee0-4e74-9528-b9f400741ba1"/>
+					<reportElement style="Title" x="127" y="0" width="675" height="66" uuid="deb8eda1-5ee0-4e74-9528-b9f400741ba1"/>
 					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
 					<textElement verticalAlignment="Bottom">
 						<font isBold="false"/>
 					</textElement>
 					<text><![CDATA[Report Transaksi Peminjaman]]></text>
 				</staticText>
+				<image>
+					<reportElement x="0" y="0" width="81" height="66" uuid="456b3ffc-8fde-4dd9-8740-8232830b9e40"/>
+					<imageExpression><![CDATA["https://i.ibb.co/Ltb7s8H/logoyappa.png"]]></imageExpression>
+				</image>
 			</frame>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="70" width="802" height="32" forecolor="#000000" backcolor="#CC0000" uuid="f96822bd-d019-4025-8679-8dd80f0c965f"/>

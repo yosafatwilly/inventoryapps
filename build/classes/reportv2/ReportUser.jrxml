@@ -59,8 +59,8 @@
 					<text><![CDATA[Report User]]></text>
 				</staticText>
 				<image>
-					<reportElement x="7" y="0" width="81" height="66" uuid="14b3ca49-a834-42a2-bff5-462e4410d3e6"/>
-					<imageExpression><![CDATA["D:\\Freelancer\\Tugas Erpan\\Tugas Kelompok\\inventoryapps\\src\\icon\\logoyappa.png"]]></imageExpression>
+					<reportElement x="0" y="0" width="81" height="66" uuid="14b3ca49-a834-42a2-bff5-462e4410d3e6"/>
+					<imageExpression><![CDATA["https://i.ibb.co/Ltb7s8H/logoyappa.png"]]></imageExpression>
 				</image>
 			</frame>
 			<frame>
