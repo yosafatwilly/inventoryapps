@@ -149,6 +149,7 @@ public class FormReport extends javax.swing.JPanel {
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
         } catch (JRException ex ) {
+            System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Dokumen tidak ditemukan.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -161,6 +162,7 @@ public class FormReport extends javax.swing.JPanel {
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
         } catch (JRException ex ) {
+            System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Dokumen tidak ditemukan.");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -173,6 +175,7 @@ public class FormReport extends javax.swing.JPanel {
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
         } catch (JRException ex ) {
+            System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Dokumen tidak ditemukan.");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -185,6 +188,7 @@ public class FormReport extends javax.swing.JPanel {
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
         } catch (JRException ex ) {
+            System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Dokumen tidak ditemukan.");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -197,6 +201,7 @@ public class FormReport extends javax.swing.JPanel {
             JasperPrint print = JasperFillManager.fillReport(path, parameter, DatabaseConnection.getInstance().getConnection());
             JasperViewer.viewReport(print, false);
         } catch (JRException ex ) {
+            System.out.println(ex);
             JOptionPane.showMessageDialog(null, "Dokumen tidak ditemukan.");
         }
     }//GEN-LAST:event_jButton5ActionPerformed

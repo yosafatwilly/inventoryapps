@@ -47,7 +47,7 @@ ORDER BY t.last_updated ASC]]>
 					<text><![CDATA[Report Transaksi Peminjaman]]></text>
 				</staticText>
 				<image>
-					<reportElement x="0" y="0" width="81" height="66" uuid="456b3ffc-8fde-4dd9-8740-8232830b9e40"/>
+					<reportElement x="21" y="0" width="81" height="66" uuid="456b3ffc-8fde-4dd9-8740-8232830b9e40"/>
 					<imageExpression><![CDATA["https://i.ibb.co/Ltb7s8H/logoyappa.png"]]></imageExpression>
 				</image>
 			</frame>
