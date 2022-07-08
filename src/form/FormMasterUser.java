@@ -411,6 +411,7 @@ public class FormMasterUser extends javax.swing.JPanel {
                 } else {
                     UserController.update(usr);
                     kosong();
+                    datatable();
                 }
             }
         }
