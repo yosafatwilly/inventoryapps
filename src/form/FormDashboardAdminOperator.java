@@ -7,6 +7,7 @@ import datasatuan.SatuanController;
 import datatransaksi.TabelModelTransaksi;
 import datatransaksi.Transaksi;
 import datatransaksi.TransaksiController;
+import datauser.User;
 import datauser.UserController;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,10 +21,12 @@ public class FormDashboardAdminOperator extends javax.swing.JPanel {
     List<Transaksi> list;
     String id;
     Transaksi t;
+    User usr;
     
-    public FormDashboardAdminOperator() {
+    public FormDashboardAdminOperator(User u) {
         initComponents();
         datatable();
+        usr = u;
         
         //Set Tebal Baris
         tbltransaksi.setRowHeight(20);
@@ -287,6 +290,7 @@ public class FormDashboardAdminOperator extends javax.swing.JPanel {
     private void bsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsimpanActionPerformed
         //Update status transaksi sesuai drop down status yang dipilih
         t.setStatus(Transaksi.Status.valueOf(cbstatus.getSelectedItem().toString()));
+        t.setUserOperator(usr);
         TransaksiController.updateStatus(t);
         datatable();
         popupdetailbarang.dispose();

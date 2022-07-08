@@ -100,11 +100,12 @@ public class TransaksiController {
     
     public static void updateStatus(Transaksi txn) {
         try {
-            String sql = "UPDATE transaksi set status=?,last_updated=? where id_transaksi=?";
+            String sql = "UPDATE transaksi set status=?, last_updated=?, id_useroperator =? where id_transaksi=?";
             PreparedStatement st = DatabaseConnection.getInstance().getConnection().prepareStatement(sql);
             st.setString(1, txn.getStatus().name());
             st.setTimestamp(2, new Timestamp(new Date().getTime()));
-            st.setString(3, txn.getIdTransaksi());
+            st.setString(3, txn.getUserOperator().getIdUser());
+            st.setString(4, txn.getIdTransaksi());
             st.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil Ubah Status.");
         } catch (SQLException ex) {

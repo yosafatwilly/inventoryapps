@@ -38,7 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
             menu.addEventMenuSelected((int index) -> {
                 switch (index) {
                     case 0:
-                        setForm(new FormDashboardAdminOperator());
+                        setForm(new FormDashboardAdminOperator(u));
                         break;
                     case 1:
                         setForm(new FormMasterUser());
@@ -68,7 +68,7 @@ public class MainMenu extends javax.swing.JFrame {
             });
 
             //  set when system open start with home form
-            setForm(new FormDashboardAdminOperator());
+            setForm(new FormDashboardAdminOperator(u));
 
         } else if (u.getRole() == Role.PEMINJAM) {
             menu.initPeminjam();
@@ -100,7 +100,7 @@ public class MainMenu extends javax.swing.JFrame {
             menu.addEventMenuSelected((int index) -> {
                 switch (index) {
                     case 0:
-                        setForm(new FormDashboardAdminOperator());
+                        setForm(new FormDashboardAdminOperator(u));
                         break;
                     case 1:
                         setForm(new FormListUser());
@@ -121,7 +121,7 @@ public class MainMenu extends javax.swing.JFrame {
                         break;
                 }
             });
-            setForm(new FormDashboardAdminOperator());
+            setForm(new FormDashboardAdminOperator(u));
         }
 
     }
