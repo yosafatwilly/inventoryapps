@@ -31,7 +31,19 @@ public class UserController {
         return isAlreadyTaken;
     }
 
-    public static void insert(User usr) {
+    public static boolean insert(User usr) {
+        //check id apakah sudah dipakai
+        if (UserController.getById(usr.getIdUser()).getIdUser() != null) {
+            JOptionPane.showMessageDialog(null, "NIS/NIP Sudah dipakai");
+            return false;
+        }
+        
+        //check username apakah sudah dipakai
+        if (UserController.checkUserByUsername(usr.getUsername())) {
+            JOptionPane.showMessageDialog(null, "NIS/NIP Sudah dipakai");
+            return false;
+        }
+        
         try {
             String sql = "INSERT INTO USER(id_user,name,username,password,role,jenis_peminjam,no_handphone,jenis_kelamin,alamat,mata_pelajaran_or_kelas,last_updated) "
                     + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
@@ -52,6 +64,7 @@ public class UserController {
         } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return true;
     }
 
     public static void delete(String id) {
@@ -92,7 +105,8 @@ public class UserController {
         List<User> list = new ArrayList<>();
         try {
             String sql = "SELECT * FROM user WHERE (LOWER(name) LIKE '%" + key + "%'\n"
-                    + "			OR UPPER(username) LIKE '%" + key + "') AND ROLE != 'ADMIN'";
+                    //                    + "			OR UPPER(username) LIKE '%" + key + "') AND ROLE != 'ADMIN'";
+                    + "			OR UPPER(username) LIKE '%" + key + "')";
             PreparedStatement st = DatabaseConnection.getInstance().getConnection().prepareStatement(sql);
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {

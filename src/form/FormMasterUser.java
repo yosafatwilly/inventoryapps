@@ -372,45 +372,46 @@ public class FormMasterUser extends javax.swing.JPanel {
         } else if (!rlaki.isSelected() && !rperempuan.isSelected()) {
             JOptionPane.showMessageDialog(null, "Pilih Jenis Kelamin.");
         } else {
-            boolean isAlreadyTaken = false;
-            if (user.getUsername() != null) {
-                if (!user.getUsername().equalsIgnoreCase(txtusername.getText())) {
-                    isAlreadyTaken = UserController.checkUserByUsername(txtusername.getText());
-                }
+            String jenis = null;
+            if (rlaki.isSelected()) {
+                jenis = "PRIA";
+            } else if (rperempuan.isSelected()) {
+                jenis = "WANITA";
             }
-            if (isAlreadyTaken) {
-                JOptionPane.showMessageDialog(null, "Username telah dipakai.");
-            } else {
-                String jenis = null;
-                if (rlaki.isSelected()) {
-                    jenis = "PRIA";
-                } else if (rperempuan.isSelected()) {
-                    jenis = "WANITA";
-                }
-                User usr = new User(
-                        txtnisnip.getText(),
-                        txtnama.getText(),
-                        txtusername.getText(),
-                        txtpassword.getText(),
-                        User.JenisPeminjam.valueOf(cbjenispeminjam.getSelectedItem().toString()),
-                        txtnohp.getText(),
-                        User.JenisKelamin.valueOf(jenis),
-                        txtalamat.getText(),
-                        User.Role.valueOf(cbrole.getSelectedItem().toString()),
-                        cbmatkul.getSelectedItem().toString(),
-                        new Timestamp(new Date().getTime()));
 
-//                if (usr.getRole().equals(User.Role.ADMIN)) {
-//                    usr.setJenisPeminjam(null);
-//                    usr.setMatapelajaranOrKelas(null);
-//                }
-                if (bsimpan.getText().equalsIgnoreCase("SIMPAN")) {
-                    UserController.insert(usr);
+            //Prepare user object
+            User usr = new User(
+                    txtnisnip.getText(),
+                    txtnama.getText(),
+                    txtusername.getText(),
+                    txtpassword.getText(),
+                    User.JenisPeminjam.valueOf(cbjenispeminjam.getSelectedItem().toString()),
+                    txtnohp.getText(),
+                    User.JenisKelamin.valueOf(jenis),
+                    txtalamat.getText(),
+                    User.Role.valueOf(cbrole.getSelectedItem().toString()),
+                    cbmatkul.getSelectedItem().toString(),
+                    new Timestamp(new Date().getTime()));
+
+            if (bsimpan.getText().equalsIgnoreCase("SIMPAN")) {
+                boolean success = UserController.insert(usr);
+                if (success) {
+                    kosong();
+                    datatable();
+                }
+            } else {
+                //Check Jika terjadi perubahan username
+                boolean isAlreadyUsername = false;
+                if (!user.getUsername().equalsIgnoreCase(txtusername.getText())) {
+                    isAlreadyUsername = UserController.checkUserByUsername(txtusername.getText());
+                }
+
+                if (isAlreadyUsername) {
+                    JOptionPane.showMessageDialog(null, "Username Sudah dipakai");
                 } else {
                     UserController.update(usr);
+                    kosong();
                 }
-                kosong();
-                datatable();
             }
         }
     }//GEN-LAST:event_bsimpanActionPerformed
@@ -453,6 +454,7 @@ public class FormMasterUser extends javax.swing.JPanel {
         bsimpan.setText("Update");
         bhapus.setEnabled(true);
         bcancel.setEnabled(true);
+        txtnisnip.setEditable(false);
     }//GEN-LAST:event_tabelMouseClicked
 
     private void bcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcariActionPerformed
@@ -548,6 +550,7 @@ public class FormMasterUser extends javax.swing.JPanel {
         txtnisnip.requestFocus(true);
         bcancel.setEnabled(false);
         bhapus.setEnabled(false);
+        txtnisnip.setEditable(true);
     }
 
     private void datatable() {
